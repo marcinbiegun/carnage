@@ -31,7 +31,7 @@ class Player
 
   # konfiguracja obiektu samochodu
   def initialize(window, shape)
-    @image = Gosu::Image.new(window, "media/Starfighter.bmp", false)
+    @image = Gosu::Image.new(window, "media/truck.bmp", false)
     @shape = shape
     @shape.body.p = CP::Vec2.new(0.0, 0.0) # Początkowa pozycja
     @shape.body.v = CP::Vec2.new(0.0, 0.0) # Początkowa prędkość
