@@ -91,9 +91,9 @@ class Star
   def initialize(animation, shape)
     @animation = animation
     @color = Gosu::Color.new(0xff000000)
-    @color.red = rand(255 - 40) + 40
-    @color.green = rand(255 - 40) + 40
-    @color.blue = rand(255 - 40) + 40
+    @color.red = 255
+    @color.green = 255
+    @color.blue = 255
     @shape = shape
     @shape.body.p = CP::Vec2.new(rand * SCREEN_WIDTH, rand * SCREEN_HEIGHT) # position
     @shape.body.v = CP::Vec2.new(0.0, 0.0) # velocity
@@ -104,7 +104,7 @@ class Star
   # Funkcja rysująca (wywoływana co krok)
   def draw
     img = @animation[Gosu::milliseconds / 100 % @animation.size];
-    img.draw(@shape.body.p.x - img.width / 2.0, @shape.body.p.y - img.height / 2.0, ZOrder::Stars, 1, 1, @color, :additive)
+    img.draw(@shape.body.p.x - img.width / 2.0, @shape.body.p.y - img.height / 2.0, ZOrder::Stars, 1, 1, @color)
   end
 end
 
@@ -113,7 +113,7 @@ class GameWindow < Gosu::Window
   def initialize
     super(SCREEN_WIDTH, SCREEN_HEIGHT, false, 16)
     self.caption = TITLE
-    @background_image = Gosu::Image.new(self, "media/Space.png", true)
+    @background_image = Gosu::Image.new(self, "media/green.png", true)
 
 
     # Przykładowy dźwięk
@@ -149,7 +149,7 @@ class GameWindow < Gosu::Window
     @player.warp(CP::Vec2.new(320, 240)) # move to the center of the window
 
     # Ładujemy animację gwiazdek
-    @star_anim = Gosu::Image::load_tiles(self, "media/Star.png", 25, 25, false)
+    @star_anim = Gosu::Image::load_tiles(self, "media/tyre.png", 25, 25, false)
 
     # Gwazdki
     @stars = Array.new
