@@ -180,11 +180,11 @@ class GameWindow < Gosu::Window
     # Also note that both Shapes involved in the collision are passed into the closure
     # in the same order that their collision_types are defined in the add_collision_func call
     @remove_shapes = []
-    @space.add_collision_func(:ship, :star) do |ship_shape, star_shape|
-      @score += 10
-      @beep.play
-      @remove_shapes << star_shape
-    end
+#    @space.add_collision_func(:ship, :star) do |ship_shape, star_shape|
+#      @score += 10
+#      @beep.play
+#      @remove_shapes << star_shape
+#    end
     
     # Here we tell Space that we don't want one star bumping into another
     # The reason we need to do this is because when the Player hits a Star,
