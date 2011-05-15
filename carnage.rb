@@ -2,6 +2,9 @@ require 'rubygems'
 require 'gosu'
 require 'chipmunk'
 
+# Nazwa programu
+TITLE = 'Carnage 0.1'
+
 # Rozmiar ekranu
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -109,7 +112,7 @@ end
 class GameWindow < Gosu::Window
   def initialize
     super(SCREEN_WIDTH, SCREEN_HEIGHT, false, 16)
-    self.caption = "Gosu & Chipmunk Integration Demo"
+    self.caption = TITLE
     @background_image = Gosu::Image.new(self, "media/Space.png", true)
 
 
