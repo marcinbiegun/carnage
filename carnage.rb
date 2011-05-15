@@ -46,12 +46,13 @@ class Player
 
   # Skręt (zmiana momentu obrotowego)
   def turn_left
-    @shape.body.t -= 400.0/SUBSTEPS
+    puts @shape.body.w
+    @shape.body.t -= 800.0/SUBSTEPS
   end
 
   # Skręt (zmiana momentu obrotowego)
   def turn_right
-    @shape.body.t += 400.0/SUBSTEPS
+    @shape.body.t += 800.0/SUBSTEPS
   end
 
   # Przyśpieszenie - działamy odpowiednią siłą
