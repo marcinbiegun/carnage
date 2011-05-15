@@ -134,7 +134,7 @@ class GameWindow < Gosu::Window
     body = CP::Body.new(10.0, 150.0)
 
     # Definiujemy kształt
-    shape_array = [CP::Vec2.new(-25.0, -25.0), CP::Vec2.new(-25.0, 25.0), CP::Vec2.new(25.0, 1.0), CP::Vec2.new(25.0, -1.0)]
+    shape_array = [CP::Vec2.new(-16.0, -15.0), CP::Vec2.new(-16.0, 15.0), CP::Vec2.new(16.0, 15.0), CP::Vec2.new(16.0, -15.0)]
     shape = CP::Shape::Poly.new(body, shape_array, CP::Vec2.new(0,0))
 
     # Definiujemy typ dla kolizji
