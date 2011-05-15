@@ -156,11 +156,11 @@ class GameWindow < Gosu::Window
 
     # Definicja kolizji (gwiazdka i pojazd)
     @remove_shapes = []
-#    @space.add_collision_func(:ship, :star) do |ship_shape, star_shape|
-#      @score += 10
-#      @beep.play
+    @space.add_collision_func(:ship, :star) do |ship_shape, star_shape|
+      @score += 10
+      @beep.play
 #      @remove_shapes << star_shape
-#    end
+    end
 
     # Definicja kolizji pustej dla dwóch gwiazdek
     @space.add_collision_func(:star, :star, &nil)
@@ -237,4 +237,6 @@ class GameWindow < Gosu::Window
 end
 
 window = GameWindow.new
-window.show
+window.show    
+    
+
