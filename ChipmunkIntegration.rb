@@ -114,6 +114,7 @@ class Star
     @shape.body.p = CP::Vec2.new(rand * SCREEN_WIDTH, rand * SCREEN_HEIGHT) # position
     @shape.body.v = CP::Vec2.new(0.0, 0.0) # velocity
     @shape.body.a = (3*Math::PI/2.0) # angle in radians; faces towards top of screen
+    @shape.body.m = 10
   end
 
   def draw  
@@ -145,7 +146,7 @@ class GameWindow < Gosu::Window
     # This is not realistic behavior in a vacuum of space, but it gives the game
     # the feel I'd like in this situation
     @space = CP::Space.new
-    @space.damping = 0.8    
+    @space.damping = 0.2
     
     # Create the Body for the Player
     body = CP::Body.new(10.0, 150.0)
